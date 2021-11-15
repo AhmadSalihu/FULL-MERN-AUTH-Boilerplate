@@ -28,6 +28,10 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 
+app.get("/", (req, res) => {
+    res.send("Server is running")
+})
+
 // Use Routes
 app.use('/api', authRouter)
 app.use('/api', userRouter)
@@ -39,7 +43,7 @@ app.use((req, res) => {
     })
 })
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 4000
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);

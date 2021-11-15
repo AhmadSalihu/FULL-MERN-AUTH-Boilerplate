@@ -12,7 +12,6 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.MAIL_KEY);
 
 
-
 exports.registerController = (req, res) => {
   const { name, email, password } = req.body;
   const errors = validationResult(req);
@@ -167,7 +166,8 @@ exports.signinController = (req, res) => {
 };
 
 exports.requireSignin = expressJwt({
-  secret: process.env.JWT_SECRET // req.user._id
+  secret: "testtestetest" || process.env.JWT_SECRET, // req.user._id
+  algorithms: ['HS256']
 });
 
 exports.adminMiddleware = (req, res, next) => {

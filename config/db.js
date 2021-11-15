@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
+const MONGO_URI = "mongodb+srv://mjtech:mjtech1234@cluster0.zeawt.mongodb.net/bank-api?retryWrites=true&w=majority"
 const connectDB = async () => {
-    const connection = await mongoose.connect(process.env.MONGO_URI, {
+    const connection = await mongoose.connect(MONGO_URI, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useFindAndModify: false,

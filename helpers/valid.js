@@ -1,5 +1,4 @@
-const {
-    check
+const { check
 } = require('express-validator');
 exports.validSign = [
     check('name', 'Name is required').notEmpty()
